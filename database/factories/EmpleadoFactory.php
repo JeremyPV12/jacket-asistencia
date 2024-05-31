@@ -25,6 +25,7 @@ class EmpleadoFactory extends Factory
             'apellido_materno' => $this->faker->lastName(),
             'fecha_nacimiento' => $this->faker->date(),
             'direccion' => $this->faker->optional()->address(),
+            'image' => ""
         ];
     }
 }

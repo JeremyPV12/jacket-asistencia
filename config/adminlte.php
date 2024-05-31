@@ -327,6 +327,12 @@ return [
             'icon' => 'far fa-fw fa-user',
             'label_color' => 'success',
         ],
+        [
+            'text' => 'Empleados',
+            'route' => 'empleados.index',
+            'icon' => 'far fa-fw fa-user',
+            'label_color' => 'success',
+        ],
         ['header' => 'Registros'],
         [
             'text' => 'Asistencia',

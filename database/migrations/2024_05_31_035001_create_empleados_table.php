@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('apellido_materno', 100);
             $table->date('fecha_nacimiento');
             $table->string('direccion', 255)->nullable();
+            $table->string('image');
             $table->unsignedBigInteger('user_id')->unique()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null')->onUpdate('cascade');
             $table->timestamps();
