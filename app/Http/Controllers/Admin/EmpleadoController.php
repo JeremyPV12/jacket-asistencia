@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Asistencia;
 use App\Models\Empleado;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -25,7 +26,8 @@ class EmpleadoController extends Controller
     public function create()
     {
         //
-        return view('admin.empleados.create');
+        $empleados = Empleado::all();
+        return view('admin.empleados.create',compact('empleados'));
     }
 
     /**
@@ -40,9 +42,13 @@ class EmpleadoController extends Controller
         $empleado->apellido_materno = $request->apellido_materno;
         $empleado->fecha_nacimiento = $request->fecha_nacimiento;
         $empleado->direccion = $request->direccion;
+        $empleado->telefono = $request->telefono;
+        $empleado->dni = $request->dni;
+        $empleado->estado = $request->estado;
+        $empleado->cargo = $request->cargo;
 
         $request->validate([
-            'image' => 'require|image'
+            'image' => 'required|image'
         ]);
 
         $imagePath = $request->file('image')->store('public/image');
@@ -83,9 +89,13 @@ class EmpleadoController extends Controller
         $empleado->apellido_materno = $request->apellido_materno;
         $empleado->fecha_nacimiento = $request->fecha_nacimiento;
         $empleado->direccion = $request->direccion;
+        $empleado->telefono = $request->telefono;
+        $empleado->dni = $request->dni;
+        $empleado->estado = $request->estado;
+        $empleado->cargo = $request->cargo;
 
         $request->validate([
-            'image' => 'require|image'
+            'image' => 'required|image'
         ]);
 
         $imagePath = $request->file('image')->store('public/image');
@@ -106,4 +116,5 @@ class EmpleadoController extends Controller
         $empleado->delete();
         return redirect()->route('empleados.index');
     }
+
 }

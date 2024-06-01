@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('asistencias', function (Blueprint $table) {
             $table->id();
-            $table->date('fecha');
-            $table->timestamp('ingreso');
-            $table->timestamp('salida')->nullable();
+            $table->date('fecha')->default(now());
+            $table->timestamp('registro');
+            $table->enum('estado', ['ingreso', 'salida'])->nullable();
             $table->unsignedBigInteger('empleado_id')->nullable();
             $table->foreign('empleado_id')->references('id')
                 ->on('empleados')

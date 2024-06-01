@@ -20,8 +20,8 @@ class AsistenciaFactory extends Factory
             //
             
             'fecha' => $this->faker->date(),
-            'ingreso' => $this->faker->dateTimeThisMonth(),
-            'salida' => $this->faker->dateTimeThisMonth(),
+            'registro' => $this->faker->dateTimeThisMonth(),
+            'estado' => $this->faker->randomElement(['ingreso', 'salida']),
         ];
     }
 }

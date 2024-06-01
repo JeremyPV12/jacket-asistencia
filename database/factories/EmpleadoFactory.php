@@ -25,6 +25,10 @@ class EmpleadoFactory extends Factory
             'apellido_materno' => $this->faker->lastName(),
             'fecha_nacimiento' => $this->faker->date(),
             'direccion' => $this->faker->optional()->address(),
+            'telefono' => $this->faker->numerify('9########'),
+            'dni' => $this->faker->numerify('########'),
+            'estado' => $this->faker->randomElement(['activo', 'inactivo']),
+            'cargo' => $this->faker->randomElement(['vendedor', 'veterinario','ayudante']),
             'image' => ""
         ];
     }

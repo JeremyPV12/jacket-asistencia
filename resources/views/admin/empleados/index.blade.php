@@ -15,24 +15,32 @@
             <table id="empleados" class="table table-striped table-bordered" style="width:100%; margin-top: 20px; font-family:'Inter', sans-serif">
                 <thead>
                     <tr>
-                        <th class="">Id</th>
-                        <th class="">Nombre</th>
-                        <th class="">Apellido Paterno</th>
-                        <th class="">Apellido Materno</th>
-                        <th class="">Fecha de Nacimiento</th>
-                        <th class="">Direccion</th>
+                        <th class="text-center">Id</th>
+                        <th class="text-center">Imagen</th>
+                        <th class="text-center">DNI</th>
+                        <th class="text-center">Nombre</th>
+                        <th class="text-center">Cargo</th>
+                        <th class="text-center">Estado</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($empleados as $empleado)
                         <tr>
-                            <td>{{$empleado->id}}</td>
-                            <td>{{$empleado->nombre}}</td>
-                            <td>{{$empleado->apellido_paterno}}</td>
-                            <td>{{$empleado->apellido_materno}}</td>
-                            <td>{{$empleado->fecha_nacimiento}}</td>
-                            <td>{{$empleado->direccion}}</th>
+                            <td class="text-center">{{$empleado->id}}</td>
+                            <td class="">
+                                <div class="w-10 h-10 rounded-xl mx-auto">
+                                    <img src="{{asset($empleado->image)}}" alt="img" class="h-full w-full rounded-xl">
+                                </div>
+                            </td>
+                            <td class="text-center">{{$empleado->dni}}</td>
+                            <td class="text-center">{{$empleado->nombre}}</td>
+                            <td class="text-center">{{$empleado->cargo}}</td>
+                            @if ($empleado->estado=='activo')
+                                <td class=""><h6 class="bg-green-500 rounded-xl p-[0.5%] text-center text-white capitalize">{{$empleado->estado}}</h6></td>
+                            @else
+                                <td class=""><h6 class="bg-red-500 rounded-xl p-[0.5%] text-center text-white capitalize">{{$empleado->estado}}</h6></td>
+                            @endif
                             <td class="flex items-center justify-center space-x-4">
                             <a href="{{ route('empleados.edit', $empleado->id) }}" class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#1f2b6c" class="w-6 h-6">

@@ -16,8 +16,12 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('apellido_paterno', 100);
             $table->string('apellido_materno', 100);
-            $table->date('fecha_nacimiento');
+            $table->date('fecha_nacimiento')->nullable();
             $table->string('direccion', 255)->nullable();
+            $table->integer('telefono');
+            $table->integer('dni');
+            $table->enum('estado', ['activo', 'inactivo'])->nullable();
+            $table->enum('cargo', ['vendedor', 'veterinario', 'ayudante'])->nullable();
             $table->string('image');
             $table->unsignedBigInteger('user_id')->unique()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null')->onUpdate('cascade');

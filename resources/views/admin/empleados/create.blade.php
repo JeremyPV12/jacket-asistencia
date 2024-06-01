@@ -40,6 +40,29 @@
                         <h2 class="text-color-letras2 font-medium text-lg">Direccion</h2>
                         <textarea name="direccion" id="" cols="50" rows="3" placeholder="Ingrese su dirección" class=" rounded-lg border-2 p-[0.4%] w-[100%] text-color-letras3 px-4 text-base bg-white outline-color-letras1 focus:outline-color-letras4"></textarea>
                     </label>
+                    <label for="" class=" col-span-1 space-y-3">
+                        <h2 class="text-color-letras2 font-medium text-lg">Telefono</h2>
+                        <input type="number" name="telefono" id="" placeholder="Ingrese su telefono" class=" rounded-lg border-2 p-[0.4%] w-[100%] text-color-letras3 px-4 text-base bg-white outline-color-letras1 focus:outline-color-letras4">
+                    </label>
+                    <label for="" class=" col-span-1 space-y-3">
+                        <h2 class="text-color-letras2 font-medium text-lg">DNI</h2>
+                        <input type="number" name="dni" id="" placeholder="Ingrese su numero de DNI" class=" rounded-lg border-2 p-[0.4%] w-[100%] text-color-letras3 px-4 text-base bg-white outline-color-letras1 focus:outline-color-letras4">
+                    </label>
+                    <label for="" class=" col-span-1 space-y-3 ">
+                        <h2 class="text-color-letras2 font-medium text-lg">Estado</h2>
+                        <select name="estado" id="" class="w-[100%] p-2 bg-color-fondo">
+                            <option value="1" class="p-[0.7%] w-[50%] text-color-letter text-lg bg-color-fondo outline-color-main">activo</option> 
+                            <option value="2" class="p-[0.7%] w-[50%] text-color-letter text-lg bg-color-fondo outline-color-main">inactivo</option> 
+                        </select>
+                    </label>
+                    <label for="" class=" col-span-1 space-y-3 ">
+                        <h2 class="text-color-letras2 font-medium text-lg">Cargo</h2>
+                        <select name="cargo" id="" class="w-[100%] p-2 bg-color-fondo">
+                            <option value="1" class="p-[0.7%] w-[50%] text-color-letter text-lg bg-color-fondo outline-color-main">vendedor</option> 
+                            <option value="2" class="p-[0.7%] w-[50%] text-color-letter text-lg bg-color-fondo outline-color-main">veterinario</option> 
+                            <option value="3" class="p-[0.7%] w-[50%] text-color-letter text-lg bg-color-fondo outline-color-main">ayudante</option> 
+                        </select>
+                    </label>
                     <label for=""  class="col-span-2 space-y-3" >
                         <h2 class="text-color-letras2 font-medium text-lg">Imagen del empleado</h2>
                         <input type="file" accept="image/*" name="image" id="image" class=" rounded-lg  p-[0.4%] w-[100%] text-color-letras3 text-base bg-white outline-color-letras1 focus:outline-color-letras4">

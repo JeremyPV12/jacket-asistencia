@@ -342,9 +342,9 @@ return [
         ],
         
         [
-            'text' => 'profile',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Crear',
+            'route' => 'asistencias.create',
+            'icon' => 'fas fa-fw fa-file',
         ],
         /* [
             'text' => 'change_password',

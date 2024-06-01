@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Asistencia;
+use App\Models\Empleado;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class AsistenciaController extends Controller
 {
@@ -24,6 +26,9 @@ class AsistenciaController extends Controller
     public function create()
     {
         //
+        $empleados= Empleado::all();
+        return view('admin.asistencias.create',compact('empleados'));
+        
     }
 
     /**
@@ -32,6 +37,15 @@ class AsistenciaController extends Controller
     public function store(Request $request)
     {
         //
+        Asistencia::create([
+            'empleado_id' => $request->empleado_id,
+            'fecha' => now(),
+            'registro' => Carbon::now()->toTimeString(),
+            'estado' => $request->estado,
+            // Otros campos de la asistencia
+        ]);
+
+        return redirect()->route('asistencias.create')->with('success', 'Asistencia registrada correctamente.');
     }
 
     /**

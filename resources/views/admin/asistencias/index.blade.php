@@ -14,9 +14,9 @@
                 <thead>
                     <tr>
                         <th class="">Id</th>
+                        <th class="">Registro</th>
+                        <th class="">Estado</th>
                         <th class="">Fecha</th>
-                        <th class="">Ingreso</th>
-                        <th class="">Salida</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -25,9 +25,11 @@
                         <tr>
                         <th>{{$asistencia->id}}</th>
                         <th>{{$asistencia->fecha}}</th>
-                        <th>{{$asistencia->ingreso}}</th>
-                        <th>{{$asistencia->salida}}</th>
-                        <th></th>
+                        <th>{{$asistencia->estado}}</th>
+                        <th>{{$asistencia->registro}}</th>
+                        <th>
+                            
+                        </th>
                     </tr>
                     @endforeach
                 </tbody>
