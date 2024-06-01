@@ -7,7 +7,7 @@ use App\Models\Asistencia;
 use App\Models\Empleado;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-
+use Illuminate\Database\QueryException;
 class AsistenciaController extends Controller
 {
     /**
@@ -37,13 +37,24 @@ class AsistenciaController extends Controller
     public function store(Request $request)
     {
         //
-        Asistencia::create([
+
+
+
+        /* Asistencia::create([
             'empleado_id' => $request->empleado_id,
             'fecha' => now(),
-            'registro' => Carbon::now()->toTimeString(),
+            'registro' => Carbon::now(), // Establecer la hora actual
             'estado' => $request->estado,
-            // Otros campos de la asistencia
-        ]);
+        ]); */
+        $fechaActual = Carbon::now()->toDateString(); // Obtener solo la fecha
+        $horaActual = Carbon::now()->toTimeString(); // Obtener solo la hora
+
+        $asistencia = new Asistencia;
+        $asistencia->empleado_id = $request->empleado_id;
+        $asistencia->fecha = $fechaActual; // Establecer la fecha actual
+        $asistencia->registro = $horaActual; // Establecer la hora actual
+        $asistencia->estado = $request->estado;
+        $asistencia->save();
 
         return redirect()->route('asistencias.create')->with('success', 'Asistencia registrada correctamente.');
     }

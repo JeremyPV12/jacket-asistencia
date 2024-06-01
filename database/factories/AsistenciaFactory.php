@@ -19,8 +19,8 @@ class AsistenciaFactory extends Factory
         return [
             //
             
-            'fecha' => $this->faker->date(),
-            'registro' => $this->faker->dateTimeThisMonth(),
+            'fecha' => $this->faker->date('Y-m-d'),
+            'registro' => $this->faker->time(),
             'estado' => $this->faker->randomElement(['ingreso', 'salida']),
         ];
     }

@@ -71,7 +71,7 @@
                             <small class="text-danger">{{mesagge}}</small>
                         @enderror
                     </label>
-                    <button type="submit" class="col-span-2 bg-color-main mx-auto text-white font-medium text-lg rounded-xl px-[2%] py-[0.5%] w-auto uppercase">Crear empleado</button>
+                    <button type="submit" class="col-span-2 bg-color-main mx-auto text-white font-medium text-lg rounded-xl px-[2%] py-[0.5%] w-auto uppercase">Editar empleado</button>
                 </form>
             </div>
         </div>

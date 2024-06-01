@@ -14,9 +14,9 @@
                 <thead>
                     <tr>
                         <th class="">Id</th>
-                        <th class="">Registro</th>
-                        <th class="">Estado</th>
                         <th class="">Fecha</th>
+                        <th class="">Estado</th>
+                        <th class="">Registro</th>
                         <th></th>
                     </tr>
                 </thead>
