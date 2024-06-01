@@ -36,6 +36,18 @@ class EmpleadoController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'nombre' => 'required|max:255|alpha',
+            'apellido_paterno' => 'required|alpha',
+            'apellido_materno' => 'required|alpha',
+            'fecha_nacimiento' => 'required|date',
+            'direccion' => 'required',
+            'telefono' => 'required|numeric|digits:9|regex:/^9[0-9]{8}$/',
+            'dni' => 'required|numeric|digits:8',
+            'estado' => 'required',
+            'cargo' => 'required',
+        ]);
+
         $empleado = new Empleado;
         $empleado->nombre = $request->nombre;
         $empleado->apellido_paterno = $request->apellido_paterno;
@@ -63,9 +75,15 @@ class EmpleadoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Empleado $empleado)
+    public function show(Empleado $empleado, Asistencia $asistencia)
     {
         //
+        /* $asistencias = Asistencia::all(); */
+        /* $asistencias = Asistencia::whereHas('empleado', function ($query) {
+            $query->where('dni', 'LIKE', '%38562562%');
+        })->get(); */
+
+
         $empleados = Empleado::find($empleado);
         return view('admin.empleados.show',compact('empleados'));
     }
@@ -86,6 +104,18 @@ class EmpleadoController extends Controller
     public function update(Request $request, Empleado $empleado)
     {
         //
+        $request->validate([
+            'nombre' => 'required|max:255|alpha',
+            'apellido_paterno' => 'required|alpha',
+            'apellido_materno' => 'required|alpha',
+            'fecha_nacimiento' => 'required|date',
+            'direccion' => 'required',
+            'telefono' => 'required|numeric|digits:9|regex:/^9[0-9]{8}$/',
+            'dni' => 'required|numeric|digits:8',
+            'estado' => 'required',
+            'cargo' => 'required',
+        ]);
+
         $empleado->nombre = $request->nombre;
         $empleado->apellido_paterno = $request->apellido_paterno;
         $empleado->apellido_materno = $request->apellido_materno;

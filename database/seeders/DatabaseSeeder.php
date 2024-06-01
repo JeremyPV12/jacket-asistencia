@@ -6,6 +6,8 @@ namespace Database\Seeders;
 
 use App\Models\Asistencia;
 use App\Models\Empleado;
+use App\Models\Producto;
+use App\Models\Servicio;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -29,7 +31,9 @@ class DatabaseSeeder extends Seeder
         ])/* ->assignRole('admin') */;
 
         /* User::factory(20)->create(); */
-        Empleado::factory(21)->create();
-        Asistencia::factory(100)->create();
+        Empleado::factory(3)->create();
+        Asistencia::factory(10)->create();
+        Producto::factory(30)->create();
+        Servicio::factory(6)->create();
     }
 }

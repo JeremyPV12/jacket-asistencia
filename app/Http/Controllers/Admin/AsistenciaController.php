@@ -16,7 +16,8 @@ class AsistenciaController extends Controller
     public function index()
     {
         //
-        $asistencias = Asistencia::all();
+        $asistencias = Asistencia::with('empleado')->get();
+        /* $asistencias = Asistencia::all(); */
         return view('admin.asistencias.index',compact('asistencias'));
     }
 

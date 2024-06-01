@@ -21,34 +21,60 @@
                 <div class="col-span-2 row-span-2 rounded-full h-[100%]">
                     <img src="{{asset($empleados->first()->image)}}" alt="imagen" class="h-full w-full rounded-xl">
                 </div>
-                <div class="col-span-4 row-span-1 border ">
-                    <h1 class="text-xl text-color-terciario font-medium mx-[2%] bg-color-main rounded-xl">{{$empleados->first()->nombre}}</h1>
+                <div class="col-span-4 row-span-1 space-y-3 ">
+                    <h2 class="text-color-letras2 font-medium text-lg mx-[2%]">Nombre</h2>
+                    <h1 class="w-[50%] text-lg text-color-letter font-medium mx-[2%] bg-color-letras3 rounded-xl capitalize p-[1%]">{{$empleados->first()->nombre}}</h1>
                 </div>
-                <div class="col-span-2 row-span-1 border">
-                    <h1>{{$empleados->first()->apellido_paterno}}</h1>
+                <div class="col-span-2 row-span-1 space-y-3">
+                    <h2 class="text-color-letras2 font-medium text-lg mx-[2%]">Apellido paterno</h2>
+                    <h1 class="w-[100%] text-lg text-color-letter font-medium mx-[2%] bg-color-letras3 rounded-xl capitalize p-[1%]">{{$empleados->first()->apellido_paterno}}</h1>
                 </div>
-                <div class="col-span-2 row-span-1 border">
-                    <h1>{{$empleados->first()->apellido_materno}}</h1>
+                <div class="col-span-2 row-span-1 space-y-3">
+                    <h2 class="text-color-letras2 font-medium text-lg mx-[2%]">Apellido materno</h2>
+                    <h1 class="w-[100%] text-lg text-color-letter font-medium mx-[2%] bg-color-letras3 rounded-xl capitalize p-[1%]">{{$empleados->first()->apellido_materno}}</h1>
                 </div>
-                <div class="col-span-2 row-span-1 border ">
-                    <h1>{{$empleados->first()->direccion}}</h1>
+                <div class="col-span-2 row-span-1 space-y-3 ">
+                    <h2 class="text-color-letras2 font-medium text-lg mx-[2%]">Direccion</h2>
+                    <h1 class="w-[100%] text-lg text-color-letter font-medium mx-[2%] bg-color-letras3 rounded-xl capitalize p-[1%]">{{$empleados->first()->direccion}}</h1>
                 </div>
-                <div class="col-span-2 row-span-1">
-                    <h1>{{$empleados->first()->telefono}}</h1>
+                <div class="col-span-2 row-span-1 space-y-3 ">
+                    <h2 class="text-color-letras2 font-medium text-lg mx-[2%]">Telefono</h2>
+                    <h1 class="w-[100%] text-lg text-color-letter font-medium mx-[2%] bg-color-letras3 rounded-xl capitalize p-[1%]">{{$empleados->first()->telefono}}</h1>
                 </div>
-                <div class="col-span-2 row-span-1 border">
-                    <h1>{{$empleados->first()->dni}}</h1>
+                <div class="col-span-2 row-span-1 space-y-3 ">
+                    <h2 class="text-color-letras2 font-medium text-lg mx-[2%]">DNI</h2>
+                    <h1 class="w-[100%] text-lg text-color-letter font-medium mx-[2%] bg-color-letras3 rounded-xl capitalize p-[1%]">{{$empleados->first()->dni}}</h1>
                 </div>
-                <div class="col-span-2 row-span-1 border">
-                    <h1>{{$empleados->first()->dni}}</h1>
+                <div class="col-span-2 row-span-1 space-y-3 ">
+                    <h2 class="text-color-letras2 font-medium text-lg mx-[2%]">Estado</h2>
+                    <h1 class="w-[100%] text-lg text-color-letter font-medium mx-[2%] bg-color-letras3 rounded-xl capitalize p-[1%]">{{$empleados->first()->estado}}</h1>
                 </div>
-                <div class="col-span-2 row-span-1 border">
-                    <h1>{{$empleados->first()->estado}}</h1>
-                </div>
-                <div class="col-span-2 row-span-1 border">
-                    <h1>{{$empleados->first()->cargo}}</h1>
+                <div class="col-span-2 row-span-1 space-y-3 ">
+                    <h2 class="text-color-letras2 font-medium text-lg mx-[2%]">Cargo</h2>
+                    <h1 class="w-[100%] text-lg text-color-letter font-medium mx-[2%] bg-color-letras3 rounded-xl capitalize p-[1%]">{{$empleados->first()->cargo}}</h1>
                 </div>
             </div>
+            {{-- <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>ID</th>
+                        <th>ID</th>
+                        <th>ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($asistencias as $asistencia)
+                        <tr>
+                            <td>{{$asistencia->first()->id}}</td>
+                            <td>{{$asistencia->first()->estado}}</td>
+                            <td>{{$asistencia->first()->fecha}}</td>
+                            <td>{{$asistencia->first()->registro}}</td>
+                        </tr>
+                    @endforeach
+                    
+                </tbody>
+            </table> --}}
         </div>
     </div>
 

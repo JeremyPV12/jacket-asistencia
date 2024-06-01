@@ -10,32 +10,7 @@
     <p>Welcome to this beautiful admin panel.</p>
     <div class="card">
         <div class="card-body">
-            <table id="empleados" class="table table-striped table-bordered" style="width:100%; margin-top: 20px; font-family:'Inter', sans-serif">
-                <thead>
-                    <tr>
-                        <th class="">Id</th>
-                        <th class="">Nombre</th>
-                        <th class="">Apellido Paterno</th>
-                        <th class="">Apellido Materno</th>
-                        <th class="">Fecha de Nacimiento</th>
-                        <th class="">Direccion</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($empleados as $empleado)
-                        <tr>
-                        <th>{{$empleado->id}}</th>
-                        <th>{{$empleado->nombre}}</th>
-                        <th>{{$empleado->apellido_paterno}}</th>
-                        <th>{{$empleado->apellido_materno}}</th>
-                        <th>{{$empleado->fecha_nacimiento}}</th>
-                        <th>{{$empleado->direccion}}</th>
-                        <th></th>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+            
         </div>
     </div>
 @stop
